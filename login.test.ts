@@ -82,10 +82,10 @@ test.describe('Login Tests - Playwright + Page Object Model', () => {
     // Dado que o usuário acessa a página inicial do sistema
     // E clica na opção "Login" (já executado no beforeEach)
 
-    // Quando informa um username válido "johndoe123"
-    await loginPage.fillUsername('johndoe123');
+    // Quando informa um username válido e já cadastrado
+    await loginPage.fillUsername('Userowner');
 
-    // E informa uma senha válida "Password@123"
+    // E informa uma senha válida 
     await loginPage.fillPassword('Password@123');
 
     // E clica no botão "Login"
@@ -93,7 +93,7 @@ test.describe('Login Tests - Playwright + Page Object Model', () => {
 
     // Então o sistema deve autenticar o usuário com sucesso
     // E o usuário deve ser redirecionado para a página inicial autenticada
-    await expect(page).toHaveURL(/overview\.htm/);
+    await expect(page).toHaveURL(/parabank\/index.htm/);
     await expect(page.getByRole('heading', { name: 'Accounts Overview' })).toBeVisible();
   });
 
@@ -106,7 +106,7 @@ test.describe('Login Tests - Playwright + Page Object Model', () => {
     await page.waitForTimeout(1000);
     const errorText = await page.locator('text=/error|could not be verified/i').first();
     await expect(errorText).toBeVisible();
-    await expect(page).not.toHaveURL(/overview\.htm/);
+    await expect(page).not.toHaveURL(/parabank\/index.htm/);
   });
 
   test.skip('Cenário: Tentativa de login com usuário inexistente', async ({ page }) => {
@@ -118,7 +118,7 @@ test.describe('Login Tests - Playwright + Page Object Model', () => {
     await page.waitForTimeout(1000);
     const errorText = await page.locator('text=/error|could not be verified/i').first();
     await expect(errorText).toBeVisible();
-    await expect(page).not.toHaveURL(/overview\.htm/);
+    await expect(page).not.toHaveURL(/parabank\/index.htm/);
   });
 
   test('Cenário: Tentativa de login com campos obrigatórios vazios', async ({ page }) => {
