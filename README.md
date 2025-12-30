@@ -51,10 +51,10 @@ npm install
 ```
 
 Este comando irá instalar todas as dependências listadas no `package.json`:
-- Jest e suas tipagens
-- Playwright Test
-- TypeScript
-- ts-jest (para executar TypeScript com Jest)
+- <span lang="en">Jest e suas tipagens</span>
+- <span lang="en">Playwright </span>
+- <span lang="en">TypeScript</span>
+- <span lang="en">ts-jest (para executar TypeScript com Jest)</span>
 
 ### 3️⃣ Instale os Navegadores do Playwright
 
@@ -127,8 +127,8 @@ As configurações do compilador TypeScript estão definidas em [tsconfig.json](
 
 Após a execução dos testes:
 
-- **Jest**: Exibe resultados no terminal com cobertura de testes
-- **Playwright**: Gera relatório HTML em `playwright-report/index.html`
+- <span lang="en">**Jest**</span>: Exibe resultados no terminal com cobertura de testes
+- <span lang="en">**Playwright**</span>: Gera relatório HTML em `playwright-report/index.html`
 
 
 ## 📝 Licença
